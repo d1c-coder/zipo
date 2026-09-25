@@ -118,3 +118,42 @@ $$('.faq-question').forEach(button => {
     if (!wasOpen) item.classList.add('open');
   });
 });
+
+
+// Hover/touch-ready desktop dropdowns: menus open as soon as the pointer reaches a trigger.
+if (matchMedia('(min-width: 761px)').matches) {
+  navItems.forEach(item => {
+    let closeTimer;
+    const openFromPointer = () => {
+      clearTimeout(closeTimer);
+      closeNavs();
+      item.classList.add('open');
+      item.querySelector('.nav-trigger')?.setAttribute('aria-expanded','true');
+    };
+    const scheduleClose = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        if (!item.matches(':hover') && !item.matches(':focus-within')) {
+          item.classList.remove('open');
+          item.querySelector('.nav-trigger')?.setAttribute('aria-expanded','false');
+        }
+      }, 140);
+    };
+    item.addEventListener('pointerenter', openFromPointer);
+    item.addEventListener('pointerleave', scheduleClose);
+    item.addEventListener('focusin', openFromPointer);
+    item.addEventListener('focusout', scheduleClose);
+  });
+}
+
+// Keep the mobile panel and hamburger state perfectly in sync.
+const syncMobileMenu = () => {
+  const open = mobileMenu?.classList.contains('open');
+  mobileMenu?.setAttribute('aria-hidden', String(!open));
+  menuBtn?.classList.toggle('active', !!open);
+};
+menuBtn?.addEventListener('click', syncMobileMenu);
+$$('.mobile-menu a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu?.classList.remove('open');
+  syncMobileMenu();
+}));

@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#f7f7f8">
   <title>ZIPO — The decentralized operating network for AI agents</title>
   <meta name="description" content="ZIPO is a decentralized network where AI agents discover, pay for, execute and verify AI services from independent providers.">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/zipo-favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/zipo-apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,8 +25,7 @@
 
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="ZIPO home">
-      <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
-      <span>ZIPO</span>
+      <img class="brand-logo" src="assets/zipo-logo.png" alt="ZIPO">
     </a>
 
     <nav class="desktop-nav" aria-label="Primary">
@@ -52,13 +53,20 @@
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <div class="mobile-menu">
-    <a href="#network">Network</a>
-    <a href="#providers">Providers</a>
-    <a href="#agents">Agents</a>
-    <a href="#architecture">Architecture</a>
-    <a href="#faq">FAQ</a>
-    <a href="#launch">CA COMING SOON</a>
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-glow"></div>
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-top"><span> ZIPO / NAVIGATION</span><i></i><small>ONLINE</small></div>
+      <div class="mobile-links">
+        <a href="#network"><span class="mobile-index">01</span><b>Network</b><em>↗</em></a>
+        <a href="#providers"><span class="mobile-index">02</span><b>Providers</b><em>↗</em></a>
+        <a href="#agents"><span class="mobile-index">03</span><b>Agents</b><em>↗</em></a>
+        <a href="#architecture"><span class="mobile-index">04</span><b>Architecture</b><em>↗</em></a>
+        <a href="#faq"><span class="mobile-index">05</span><b>FAQ</b><em>↗</em></a>
+        <a class="mobile-ca" href="#launch"><span class="mobile-index">06</span><b>CA COMING SOON</b><em>↗</em></a>
+      </div>
+      <div class="mobile-menu-foot"><span>IDENTITY · DISCOVERY · EXECUTION</span><span>ZIPO_01</span></div>
+    </div>
   </div>
 
   <main>
@@ -307,7 +315,7 @@
   <footer class="footer section-pad">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="#top"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>ZIPO</span></a>
+        <a class="brand" href="#top" aria-label="ZIPO home"><img class="brand-logo" src="assets/zipo-logo.png" alt="ZIPO"></a>
         <p>The decentralized operating network for AI agents.</p>
         <span class="footer-mono">INFRASTRUCTURE FOR AUTONOMOUS AGENTS</span>
       </div>
