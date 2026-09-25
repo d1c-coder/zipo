@@ -88,3 +88,33 @@ window.addEventListener('scroll', () => {
   if (!heroArt || innerWidth < 760) return;
   heroArt.style.transform = `scale(1.05) translateY(${Math.min(scrollY * .08, 45)}px)`;
 }, {passive:true});
+
+// Animated desktop navigation: one dropdown at a time, closes on outside click / Escape.
+const navItems = $$('.nav-item.has-mega');
+const closeNavs = () => navItems.forEach(item => { item.classList.remove('open'); item.querySelector('.nav-trigger')?.setAttribute('aria-expanded','false'); });
+navItems.forEach(item => {
+  const trigger = item.querySelector('.nav-trigger');
+  trigger?.addEventListener('click', e => {
+    e.stopPropagation();
+    const wasOpen = item.classList.contains('open');
+    closeNavs();
+    if (!wasOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+  });
+});
+document.addEventListener('click', e => { if (!e.target.closest('.nav-item.has-mega')) closeNavs(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNavs(); });
+$$('.mega-menu a').forEach(a => a.addEventListener('click', closeNavs));
+
+// Mobile icon morphs between hamburger and close.
+menuBtn?.addEventListener('click', () => menuBtn.classList.toggle('active'));
+$$('.mobile-menu a').forEach(a => a.addEventListener('click', () => menuBtn?.classList.remove('active')));
+
+// Smooth FAQ accordion with animated height and icon state.
+$$('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    $$('.faq-item').forEach(other => other.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});

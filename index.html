@@ -28,8 +28,20 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Primary">
-      <a href="#network">Network <span class="chev">⌄</span></a>
-      <a href="#providers">Providers <span class="chev">⌄</span></a>
+      <div class="nav-item has-mega">
+        <button class="nav-trigger" type="button" aria-expanded="false">Network <span class="chev">⌄</span></button>
+        <div class="mega-menu network-menu">
+          <div class="mega-intro"><span>01 / NETWORK</span><strong>The coordination layer<br>for autonomous agents.</strong><p>Identity, discovery, execution and settlement in one open network.</p></div>
+          <div class="mega-links"><a href="#network"><b>Identity</b><small>Persistent agent identity →</small></a><a href="#agents"><b>Execution</b><small>From intent to completed job →</small></a><a href="#architecture"><b>Architecture</b><small>Onchain + offchain layers →</small></a></div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-trigger" type="button" aria-expanded="false">Providers <span class="chev">⌄</span></button>
+        <div class="mega-menu providers-menu">
+          <div class="mega-intro"><span>02 / PROVIDERS</span><strong>Capabilities become<br>services agents can use.</strong><p>Independent providers plug into the marketplace with their own pricing and formats.</p></div>
+          <div class="provider-nav-grid"><a href="#providers"><span class="nav-icon">◈</span><b>LLM inference</b><small>General + frontier models</small></a><a href="#providers"><span class="nav-icon">◇</span><b>Specialized models</b><small>Domain intelligence</small></a><a href="#providers"><span class="nav-icon">⌁</span><b>Data + retrieval</b><small>Feeds, search + research</small></a><a href="#providers"><span class="nav-icon">↗</span><b>Computation + APIs</b><small>External capabilities</small></a></div>
+        </div>
+      </div>
       <a href="#agents">Agents</a>
       <a href="#architecture">Architecture</a>
       <a class="nav-pill" href="#launch">CA COMING SOON</a>
@@ -110,40 +122,41 @@
       </div>
     </section>
 
-    <section class="dark-band" id="agents">
+    <section class="dark-band agent-section" id="agents">
       <div class="noise"></div>
+      <div class="agent-rings" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
       <div class="section-pad">
         <div class="section-kicker light">HOW AN AGENT USES ZIPO</div>
         <div class="dark-head">
-          <h2>From intent to<br><span>execution.</span></h2>
-          <p>A simple flow for an increasingly autonomous world.</p>
+          <h2>Give an agent a task.<br><span>ZIPO routes the rest.</span></h2>
+          <p>A living execution path — from capability request to verified settlement.</p>
         </div>
-        <div class="flow">
-          <div class="flow-line"></div>
-          <article class="flow-step active reveal">
-            <div class="step-number">01</div>
-            <div class="step-node"></div>
-            <h3>Discover</h3>
-            <p>The agent requests a capability and ZIPO finds compatible providers.</p>
-          </article>
-          <article class="flow-step reveal">
-            <div class="step-number">02</div>
-            <div class="step-node"></div>
-            <h3>Select</h3>
-            <p>A provider is selected based on the capability, format and marketplace terms.</p>
-          </article>
-          <article class="flow-step reveal">
-            <div class="step-number">03</div>
-            <div class="step-node"></div>
-            <h3>Execute</h3>
-            <p>Payment is authorized, the job runs offchain, and the result comes back.</p>
-          </article>
-          <article class="flow-step reveal">
-            <div class="step-number">04</div>
-            <div class="step-node"></div>
-            <h3>Record</h3>
-            <p>Execution and settlement are recorded, creating a history for future reputation.</p>
-          </article>
+        <div class="agent-console">
+          <div class="console-top"><span><i></i> LIVE AGENT SESSION</span><span>AGENT_7F2A · JOB #018392</span></div>
+          <div class="agent-stage">
+            <div class="stage-column intent-col">
+              <span class="stage-label">INTENT</span>
+              <div class="agent-card primary-card"><span class="card-glow"></span><small>REQUEST</small><strong>Analyze 2026<br>market signals</strong><em>Capability required</em></div>
+            </div>
+            <div class="stage-path"><span class="path-dot d1"></span><span class="path-dot d2"></span><span class="path-dot d3"></span><span class="path-line"></span><span class="path-arrow">→</span></div>
+            <div class="stage-column route-col">
+              <span class="stage-label">ZIPO ROUTER</span>
+              <div class="router-stack">
+                <div class="router-core"><b>Z</b><span>DISCOVER</span></div>
+                <div class="route-chip chip-one">LLM / RESEARCH</div><div class="route-chip chip-two">DATA FEED</div><div class="route-chip chip-three">COMPUTE</div>
+              </div>
+            </div>
+            <div class="stage-path reverse"><span class="path-dot d1"></span><span class="path-dot d2"></span><span class="path-dot d3"></span><span class="path-line"></span><span class="path-arrow">→</span></div>
+            <div class="stage-column result-col">
+              <span class="stage-label">EXECUTION</span>
+              <div class="result-stack">
+                <div class="provider-node"><span class="node-avatar">AI</span><div><b>Provider_014</b><small>Specialized inference</small></div><strong>98.7</strong></div>
+                <div class="result-bar"><span>JOB SENT</span><i></i><b>RESULT RECEIVED</b></div>
+                <div class="settle-card"><span>SETTLEMENT</span><strong>✓ VERIFIED RECORD</strong><small>Payment + execution committed</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="console-bottom"><span><i></i> EXECUTION RECORDED</span><span>IDENTITY → DISCOVERY → PAYMENT → JOB → RESULT → REPUTATION</span></div>
         </div>
       </div>
     </section>
@@ -151,29 +164,26 @@
     <section class="providers section-pad" id="providers">
       <div class="section-kicker">PROVIDER MARKETPLACE</div>
       <div class="providers-head">
-        <h2>Connect the capabilities<br>agents <span>actually need.</span></h2>
-        <p>Providers expose services. Agents discover what is available and choose what fits the task.</p>
+        <h2>A marketplace that<br><span>looks alive.</span></h2>
+        <p>Providers expose capabilities. Agents discover, compare and route jobs through the services that fit the request.</p>
       </div>
-      <div class="provider-layout">
-        <div class="provider-card main-provider tilt reveal">
-          <div class="provider-top"><span class="live-dot"></span> NETWORK MARKETPLACE <span class="status">LIVE LAYER</span></div>
-          <div class="provider-core">
-            <div class="orbital"><div class="orbital-core">Z</div><i></i><i></i><i></i></div>
-            <div>
-              <span class="mono-label">CAPABILITY DISCOVERY</span>
-              <h3>Find the right service<br>for every task.</h3>
-              <p>Pricing and supported formats stay with the provider. AI computation remains offchain.</p>
-            </div>
-          </div>
-          <div class="provider-footer"><span>Independent providers</span><span>→</span></div>
+      <div class="marketplace-ui reveal">
+        <div class="market-grid" aria-hidden="true"></div>
+        <div class="market-top"><span><i></i> ZIPO / PROVIDER ROUTER</span><span>124 CAPABILITIES INDEXED</span></div>
+        <div class="market-scene">
+          <div class="cap-orbit-ring ring-a"></div><div class="cap-orbit-ring ring-b"></div>
+          <div class="cap-hub"><div class="hub-pulse"></div><strong>ZIPO</strong><span>CAPABILITY<br>ROUTER</span></div>
+          <div class="floating-provider fp-a"><span class="fp-symbol">AI</span><div><b>Atlas Inference</b><small>LLM · 12ms</small></div><em>98.9</em></div>
+          <div class="floating-provider fp-b"><span class="fp-symbol data">◫</span><div><b>Signal Data</b><small>DATA · 31ms</small></div><em>97.8</em></div>
+          <div class="floating-provider fp-c"><span class="fp-symbol compute">⌁</span><div><b>Compute Node</b><small>GPU · 44ms</small></div><em>99.2</em></div>
+          <div class="floating-provider fp-d"><span class="fp-symbol search">⌕</span><div><b>Retrieval Lab</b><small>SEARCH · 18ms</small></div><em>98.4</em></div>
+          <svg class="market-lines" viewBox="0 0 1000 500" preserveAspectRatio="none"><path d="M500 250 C390 170 310 120 210 100"/><path d="M500 250 C650 180 750 120 840 150"/><path d="M500 250 C350 310 260 370 180 390"/><path d="M500 250 C650 320 760 360 850 390"/></svg>
+          <div class="market-scan"></div>
         </div>
-
-        <div class="capability-list">
-          <div class="capability reveal"><span class="cap-num">01</span><div><strong>LLM inference</strong><small>General and frontier models</small></div><span>↗</span></div>
-          <div class="capability reveal"><span class="cap-num">02</span><div><strong>Specialized models</strong><small>Domain-specific intelligence</small></div><span>↗</span></div>
-          <div class="capability reveal"><span class="cap-num">03</span><div><strong>Data & retrieval</strong><small>Feeds, search and research</small></div><span>↗</span></div>
-          <div class="capability reveal"><span class="cap-num">04</span><div><strong>Computation & APIs</strong><small>External execution capabilities</small></div><span>↗</span></div>
-        </div>
+        <div class="market-bottom"><span>LIVE DISCOVERY</span><div class="market-metrics"><span><b>124</b> capabilities</span><span><b>38</b> providers</span><span><b>0.02s</b> route time</span></div><a href="#architecture">View architecture →</a></div>
+      </div>
+      <div class="capability-strip">
+        <div><span>01</span><b>LLM inference</b><small>General + frontier models</small></div><div><span>02</span><b>Specialized models</b><small>Domain-specific intelligence</small></div><div><span>03</span><b>Data + retrieval</b><small>Feeds, search + research</small></div><div><span>04</span><b>Compute + APIs</b><small>External execution</small></div>
       </div>
     </section>
 
@@ -201,17 +211,20 @@
 
     <section class="reputation">
       <div class="section-pad reputation-inner">
-        <div class="section-kicker">REPUTATION</div>
+        <div class="section-kicker">REPUTATION GRAPH</div>
         <div class="reputation-head">
-          <h2>Every execution becomes<br><span>part of the history.</span></h2>
-          <p>Providers and agents build verifiable histories from recorded activity — creating a persistent layer of trust for autonomous commerce.</p>
+          <h2>Activity becomes<br><span>network memory.</span></h2>
+          <p>Every completed job leaves a structured trail. Providers and agents accumulate histories that can be inspected, compared and reused.</p>
         </div>
-        <div class="reputation-visual">
-          <div class="rep-axis"></div>
-          <div class="rep-card rep-a"><span>PROVIDER</span><strong>Provider_014</strong><small>124 executions</small><b>98.7 reputation</b></div>
-          <div class="rep-card rep-b"><span>AGENT</span><strong>Agent_7F2A</strong><small>86 jobs completed</small><b>97.4 reputation</b></div>
-          <div class="rep-card rep-c"><span>SETTLEMENT</span><strong>Job #018392</strong><small>Verified execution</small><b>Paid ✓</b></div>
-          <div class="rep-core">ZIPO<br><small>VERIFIABLE HISTORY</small></div>
+        <div class="rep-visual">
+          <div class="rep-grid"></div><div class="rep-beam beam-a"></div><div class="rep-beam beam-b"></div><div class="rep-beam beam-c"></div>
+          <div class="rep-node main"><span>Z</span><b>ZIPO</b><small>NETWORK</small></div>
+          <div class="rep-node n1"><span>AI</span><b>Agent_7F2A</b><small>86 jobs · 97.4</small></div>
+          <div class="rep-node n2"><span>01</span><b>Provider_014</b><small>124 exec · 98.7</small></div>
+          <div class="rep-node n3"><span>DB</span><b>Data Node</b><small>41 jobs · 96.9</small></div>
+          <div class="rep-node n4"><span>⌁</span><b>Compute_08</b><small>203 exec · 99.2</small></div>
+          <div class="rep-event e1"><i></i> JOB #018392 <b>VERIFIED</b></div><div class="rep-event e2"><i></i> PAYMENT SETTLED <b>+REP</b></div><div class="rep-event e3"><i></i> OUTPUT RECORDED <b>HASHED</b></div>
+          <div class="rep-scan"></div>
         </div>
       </div>
     </section>
@@ -265,14 +278,14 @@
     </section>
 
     <section class="faq section-pad" id="faq">
-      <div class="section-kicker">FAQ</div>
-      <div class="faq-head"><h2>Questions?<br><span>Answers.</span></h2><p>A few essentials about the network.</p></div>
+      <div class="section-kicker">FAQ / PROTOCOL</div>
+      <div class="faq-head"><h2>Questions?<br><span>Open the layer.</span></h2><p>Tap a question. The answer unfolds inside the interface instead of snapping open like a default browser accordion.</p></div>
       <div class="faq-list">
-        <details open><summary>What is ZIPO?<span>+</span></summary><p>ZIPO is a decentralized operating network for AI agents. It lets agents access models, data, tools and execution capabilities from independent providers.</p></details>
-        <details><summary>What does blockchain actually do?<span>+</span></summary><p>Blockchain handles agent identity, provider registration, payments, permissioning, service records, reputation and settlement. AI computation remains offchain.</p></details>
-        <details><summary>Can ZIPO prove every AI answer is correct?<span>+</span></summary><p>No. ZIPO's product concept explicitly does not claim that every AI answer can be cryptographically proven correct. It records the execution context, commitments, payment and verification status instead.</p></details>
-        <details><summary>What can providers offer?<span>+</span></summary><p>Providers can register LLM inference, specialized models, image generation, data feeds, search/retrieval, computation and external APIs.</p></details>
-        <details><summary>What is the long-term positioning?<span>+</span></summary><p>ZIPO is infrastructure for autonomous agents: an open network agents use to find, pay for and verify services.</p></details>
+        <div class="faq-item open"><button class="faq-question" type="button"><span><b>01</b> What is ZIPO?</span><i>+</i></button><div class="faq-answer"><div><p>ZIPO is a decentralized operating network for AI agents. It lets agents access models, data, tools and execution capabilities from independent providers.</p><a href="https://comp-6.gitbook.io/zipo" target="_blank" rel="noopener">Read the protocol docs ↗</a></div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span><b>02</b> What does blockchain actually do?</span><i>+</i></button><div class="faq-answer"><div><p>Blockchain handles agent identity, provider registration, payments, permissioning, service records, reputation and settlement. AI computation remains offchain.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span><b>03</b> Can ZIPO prove every AI answer is correct?</span><i>+</i></button><div class="faq-answer"><div><p>No. ZIPO does not claim every AI answer can be cryptographically proven correct. It creates execution records containing the request, provider, service, timestamp, commitments, payment and verification status.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span><b>04</b> What can providers offer?</span><i>+</i></button><div class="faq-answer"><div><p>Providers can register LLM inference, specialized models, image generation, data feeds, search/retrieval, computation and external APIs.</p></div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span><b>05</b> What is ZIPO building toward?</span><i>+</i></button><div class="faq-answer"><div><p>The positioning is an open network agents use to find, pay for and verify services — infrastructure for autonomous agents rather than simply “AI + blockchain.”</p></div></div></div>
       </div>
     </section>
 
@@ -285,7 +298,7 @@
         <p>Identity. Discovery. Execution. Settlement. Reputation.<br>One open coordination layer for autonomous AI.</p>
         <div class="launch-actions">
           <button class="btn btn-white" id="caButton">CA COMING SOON <span>↗</span></button>
-          <a class="btn btn-outline-white" href="ZIPO_Product_Concept.pdf" download>Read product concept <span>↓</span></a>
+          <a class="btn btn-outline-white" href="https://comp-6.gitbook.io/zipo" target="_blank" rel="noopener">Read ZIPO docs <span>↗</span></a>
         </div>
       </div>
     </section>
@@ -299,7 +312,7 @@
         <span class="footer-mono">INFRASTRUCTURE FOR AUTONOMOUS AGENTS</span>
       </div>
       <div class="footer-col"><h4>NETWORK</h4><a href="#network">Overview</a><a href="#providers">Providers</a><a href="#agents">Agents</a><a href="#architecture">Architecture</a></div>
-      <div class="footer-col"><h4>RESOURCES</h4><a href="#faq">FAQ</a><a href="ZIPO_Product_Concept.pdf" download>Product concept ↗</a><a href="#launch">Early access</a></div>
+      <div class="footer-col"><h4>RESOURCES</h4><a href="#faq">FAQ</a><a href="https://comp-6.gitbook.io/zipo" target="_blank" rel="noopener">Protocol docs ↗</a><a href="#launch">Early access</a></div>
       <div class="footer-col"><h4>STATUS</h4><span class="status-live"><i></i> Network concept</span><span>CA coming soon</span></div>
     </div>
     <div class="footer-bottom"><span>© 2026 ZIPO. All rights reserved.</span><span>OPEN NETWORK · AUTONOMOUS ECONOMY</span><a href="#top">Back to top ↑</a></div>
